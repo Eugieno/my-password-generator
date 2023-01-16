@@ -103,6 +103,15 @@ function generatePassword() {
 
 }
 
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random()*arr.length)
+  var randElem = arr[randIndex]
+  return randElem
+}
+
+getRandom(specialCharacters)
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
