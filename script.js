@@ -88,6 +88,42 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// Concatenated Arrays 
+
+// if TTTT - use ALL 4 characters
+spNumLowAndUpperXter = specialCharacters.concat(numericCharacters,lowerCasedCharacters,upperCasedCharacters)
+// if TTFT - Use special, number, uppercase
+spNumAndUpperXter = specialCharacters.concat(numericCharacters,upperCasedCharacters)
+// if TTTF - Use special, number, lowercase
+spNumAndLowerXter = specialCharacters.concat(numericCharacters,lowerCasedCharacters)
+// if TFTT - Use special, lowercase, upprcase
+spLowerAndUpperXter = specialCharacters.concat(lowerCasedCharacters,upperCasedCharacters)
+// if FTTT - Use number, lowercase, uppercase
+numLowAndUpperXter = numericCharacters.concat(lowerCasedCharacters,upperCasedCharacters)
+// if TTFF - Use special, number 
+spAndNumXter = specialCharacters.concat(numericCharacters)
+// if TFTF - Use special, lowercase
+spAndLowXter = specialCharacters.concat(lowerCasedCharacters)
+// if TFFT - Use special, uppercase
+spAndUpperXter = specialCharacters.concat(upperCasedCharacters)
+// if FTTF - Use number, lowercase
+numAndLowXter = numericCharacters.concat(lowerCasedCharacters)
+// if FTFT - Use number, uppercase
+numAndUpperXter = numericCharacters.concat(upperCasedCharacters)
+// if FFTT - Use lowercase, uppercase
+lowAndUpperXter = lowerCasedCharacters.concat(upperCasedCharacters)
+
+// function to ask user to restart 
+function startAgain() {
+  var restart = confirm("Click OK to Restart");
+  if (restart == true) {
+    getPasswordOptions()
+  } else {
+    alert("Thanks for using this App!")
+  }
+}
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -102,14 +138,6 @@ function getRandom(arr) {
 function generatePassword() {
 
 }
-
-function getRandom(arr) {
-  var randIndex = Math.floor(Math.random()*arr.length)
-  var randElem = arr[randIndex]
-  return randElem
-}
-
-getRandom(specialCharacters)
 
 
 // Get references to the #generate element
