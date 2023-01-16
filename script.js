@@ -126,6 +126,71 @@ function startAgain() {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  // Ask User Length of password and validates input 
+  passLength = false
+  optArray = [] 
+  while (passLength == false) {
+      passLength = parseInt(prompt("How many characters do you want in your password? (Enter a number between 10-64)")) 
+      if (isNaN(passLength)) {
+          alert("Sorry! Your input is not a number!")
+          passLength = false
+      } else if (!isNaN(passLength)) {
+          if (passLength < 10 || passLength > 64) {
+              alert("Invalid input! Check that you have entered a number between 10 and 64")
+              passLength = false
+          } else {
+              var confirmChoice = confirm(`Click OK to confirm that your password should be ${passLength} characters long`)
+              if (confirmChoice == true) {
+                  console.log(`Your password will be created with ${passLength} characters`)
+                  /// Special character 
+                  var optSpecialxter = confirm("Click OK if you want special characters in your password")
+                  optArray.push(optSpecialxter)
+                  // Numeric option 
+                  var optNumbers = confirm("Click OK if you want numeric characters in your password")
+                  optArray.push(optNumbers)
+
+                  // Lowercase option
+                  var optLowerCase = confirm("Click OK if you want lower case characters in your password")
+                  optArray.push(optLowerCase)
+                  // Uppercase option
+                  var optUpperCase = confirm("Click OK if you want upper case characters in your password")
+                  optArray.push(optUpperCase)
+              } else {
+                  startAgain()
+                  // earlyExit = confirm("Click OK to exit this App")
+                  // if (earlyExit == true) {
+                  //   alert("Thanks for using this App")
+                  // } else {
+                  //   passLength = false
+                  // }
+              }
+          
+          }
+      }
+   
+  }
+  return {
+    userPassLength: passLength,
+    charOptions: optArray
+  }
+  passLength = true
+}
+
+// result = getPasswordOptions()
+
+// let passwordL = result.userPassLength
+// let optOfchar = result.charOptions
+
+// console.log(passwordL, optOfchar)
+
+
+
+
+// Function for getting a random element from an array
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random()*arr.length)
+  var randElem = arr[randIndex]
+  return randElem
 
 }
 
