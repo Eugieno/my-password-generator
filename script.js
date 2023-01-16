@@ -143,17 +143,17 @@ function getPasswordOptions() {
               if (confirmChoice == true) {
                   console.log(`Your password will be created with ${passLength} characters`)
                   /// Special character 
-                  var optSpecialxter = confirm("Click OK if you want special characters in your password")
+                  var optSpecialxter = confirm("Click OK if you want SPECIAL characters in your password")
                   optArray.push(optSpecialxter)
                   // Numeric option 
-                  var optNumbers = confirm("Click OK if you want numeric characters in your password")
+                  var optNumbers = confirm("Click OK if you want NUMERIC characters in your password")
                   optArray.push(optNumbers)
 
                   // Lowercase option
-                  var optLowerCase = confirm("Click OK if you want lower case characters in your password")
+                  var optLowerCase = confirm("Click OK if you want LOWER case characters in your password")
                   optArray.push(optLowerCase)
                   // Uppercase option
-                  var optUpperCase = confirm("Click OK if you want upper case characters in your password")
+                  var optUpperCase = confirm("Click OK if you want UPPER case characters in your password")
                   optArray.push(optUpperCase)
               } else {
                   startAgain()
