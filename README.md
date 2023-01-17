@@ -10,7 +10,6 @@ my-password generator is a web application that is used to randomly generate pas
 Follow the [App URL](https://eugieno.github.io/my-password-generator/). Click on the generate password button, and type in and select your choices of character length and character options respectively. Thereafter, your password will display on screen. 
 
 ## Reflection
-### Context of Project 
 This was a 3 days long challenge project built during my fifth module at University of Birmingam FE web development Bootcamp. Project goals included using object, data structures and functions in javascript learned up until this point and familiarising myself with how the three web languages (HTML, CSS, JS) integrate to build a simple dynamic web app.
 
 One of the main challenges I ran into was enforcing the app to show ALL of the character options selected by the user despite the randomness of the pick from each character arrays provided in the starter file.
