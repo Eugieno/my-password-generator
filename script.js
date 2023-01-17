@@ -200,16 +200,16 @@ function generatePassword() {
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3 || randSelector == 1 && i === 4)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector)
         } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2 || randSelector == 2 && i === 3 || randSelector == 2 && i === 4)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector)
         } else if ((randSelector == 3 && i === 1 || randSelector == 3 && i === 2 || randSelector == 3 && i === 3 || randSelector == 3 && i === 4)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(3);
+          arrRandom = arrRandom.filter(item => item !== randSelector)
         } else if ((randSelector == 4 && i === 1 || randSelector == 4 && i === 2 || randSelector == 4 && i === 3 || randSelector == 4 && i === 4)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(4);
+          arrRandom = arrRandom.filter(item => item !== randSelector)
         } else {
           ArrofGenPass.push(getRandom(spNumLowAndUpperXter));
         }
@@ -224,13 +224,13 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
             ArrofGenPass.push(getRandom(specialCharacters));
-            arrRandom.pop(1);
+            arrRandom = arrRandom.filter(item => item !== randSelector)
         } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
             ArrofGenPass.push(getRandom(numericCharacters));
-            arrRandom.pop(2);
+            arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)) {
             ArrofGenPass.push(getRandom(lowerCasedCharacters));
-            arrRandom.pop(3);
+            arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
             ArrofGenPass.push(getRandom(spNumAndLowerXter));
         }
@@ -245,13 +245,13 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(3);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(spLowerAndUpperXter));
         }
@@ -266,13 +266,13 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(3);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(numLowAndUpperXter));
         }
@@ -287,13 +287,13 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(3);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(spNumAndUpperXter));
         }
@@ -308,10 +308,10 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(spAndNumXter));
         }
@@ -326,10 +326,10 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(spAndLowXter));
         }
@@ -344,10 +344,10 @@ function generatePassword() {
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(spAndUpperXter));
         }
@@ -362,10 +362,10 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(numAndLowXter));
         }
@@ -380,10 +380,10 @@ function generatePassword() {
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(numAndUpperXter));
         }
@@ -398,10 +398,10 @@ function generatePassword() {
         var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(1);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else if ((randSelector == 2 && i === 1 || i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
-          arrRandom.pop(2);
+          arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
           ArrofGenPass.push(getRandom(lowAndUpperXter));
         } 
