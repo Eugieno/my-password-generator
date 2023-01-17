@@ -179,19 +179,14 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   // initialisations
-    // passlenhth  
     ArrofGenPass = [] // An empty string to hold the randomly selected characters 
-
-  
     result = getPasswordOptions() // call getpassword function
-
-      // Initialisation
     let passwordL = result.userPassLength
     let optOfchar = result.charOptions
 
     console.log(passwordL, optOfchar)
     
-  // - Call different scenarios 
+  //Calling different User character options
   // if TTTT - Use the 4 arrays
   if ((optOfchar[0] == true && optOfchar[1] == true && optOfchar[2] == true && optOfchar[3] == true)) {
     var arrRandom = [1,2,3,4]
@@ -222,13 +217,13 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)) {
             ArrofGenPass.push(getRandom(specialCharacters));
             arrRandom = arrRandom.filter(item => item !== randSelector)
-        } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2 || randSelector == 2 && i === 3)) {
             ArrofGenPass.push(getRandom(numericCharacters));
             arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)) {
+        } else if ((randSelector == 3 && i === 1 || randSelector == 3 && i === 2 || randSelector == 3 && i === 3)) {
             ArrofGenPass.push(getRandom(lowerCasedCharacters));
             arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -243,13 +238,13 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2 || randSelector == 2 && i === 3)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
+        } else if ((randSelector == 3 && i === 1 || randSelector == 3 && i === 2 || randSelector == 3 && i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -264,13 +259,13 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
+        } else if ((randSelector == 3 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -285,13 +280,13 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2 || randSelector == 2 && i === 3)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)){
+        } else if ((randSelector == 3 && i === 1 || randSelector == 3 && i === 2 || randSelector == 3 && i === 3)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -306,10 +301,10 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -324,10 +319,10 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -342,10 +337,10 @@ function generatePassword() {
     for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
       var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)){
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -360,10 +355,10 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)) {
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -378,10 +373,10 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
       var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)){
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
@@ -396,10 +391,10 @@ function generatePassword() {
       for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
         var randSelector = getRandom(arrRandom)
-        if ((randSelector == 1 && i === 1 || i === 2)) {
+        if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
-        } else if ((randSelector == 2 && i === 1 || i === 2)){
+        } else if ((randSelector == 2 && i === 1 || randSelector == 2 && i === 2)){
           ArrofGenPass.push(getRandom(upperCasedCharacters));
           arrRandom = arrRandom.filter(item => item !== randSelector);
         } else {
