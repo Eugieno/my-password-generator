@@ -126,9 +126,8 @@ function startAgain() {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // Ask User Length of password and validates input 
-  passLength = false
-  optArray = [] 
+  passLength = false    // Ask User Length of password and validates input 
+  optArray = []      // Array to hold user bool char options
   while (passLength == false) {
       passLength = parseInt(prompt("How many characters do you want in your password? (Enter a number between 10-64)")) 
       if (isNaN(passLength)) {
@@ -148,7 +147,6 @@ function getPasswordOptions() {
                   // Numeric option 
                   var optNumbers = confirm("Click OK if you want NUMERIC characters in your password")
                   optArray.push(optNumbers)
-
                   // Lowercase option
                   var optLowerCase = confirm("Click OK if you want LOWER case characters in your password")
                   optArray.push(optLowerCase)
@@ -157,17 +155,10 @@ function getPasswordOptions() {
                   optArray.push(optUpperCase)
               } else {
                   startAgain()
-                  // earlyExit = confirm("Click OK to exit this App")
-                  // if (earlyExit == true) {
-                  //   alert("Thanks for using this App")
-                  // } else {
-                  //   passLength = false
-                  // }
               }
           
           }
       }
-   
   }
   return {
     userPassLength: passLength,
@@ -175,15 +166,6 @@ function getPasswordOptions() {
   }
   passLength = true
 }
-
-// result = getPasswordOptions()
-
-// let passwordL = result.userPassLength
-// let optOfchar = result.charOptions
-
-// console.log(passwordL, optOfchar)
-
-
 
 
 // Function for getting a random element from an array
@@ -197,34 +179,24 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   // initialisations
-    // passlenhth
-  
-    // optArray
-  
-    
-    ArrofGenPass = [] // An empty string to hold the characters randomly selected
+    // passlenhth  
+    ArrofGenPass = [] // An empty string to hold the randomly selected characters 
 
-    // Get password options from user 
-      // call getpassword function
-    
-      result = getPasswordOptions()
+  
+    result = getPasswordOptions() // call getpassword function
 
       // Initialisation
-      let passwordL = result.userPassLength
-      let optOfchar = result.charOptions
+    let passwordL = result.userPassLength
+    let optOfchar = result.charOptions
 
-      console.log(passwordL, optOfchar)
-    // Random selecion of characters and appending based on user options 
-      // conditional logic 
-      // for loop 
-
+    console.log(passwordL, optOfchar)
+    
   // - Call different scenarios 
   // if TTTT - Use the 4 arrays
   if ((optOfchar[0] == true && optOfchar[1] == true && optOfchar[2] == true && optOfchar[3] == true)) {
     var arrRandom = [1,2,3,4]
     for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 4 characters in the randomly generated character
-      
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || randSelector == 1 && i === 2 || randSelector == 1 && i === 3 || randSelector == 1 && i === 4)) {
           ArrofGenPass.push(getRandom(specialCharacters));
@@ -246,31 +218,31 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if TTTF - Use special, number, lowercase
   } else if ((optOfchar[0] == true && optOfchar[1] == true && optOfchar[2] == true && optOfchar[3] == false)) {
-    for (var i = 1; i <= passwordL; i++) {
+      var arrRandom = [1,2,3]
+      for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
-      var arrRandom = [1,2,3]  
-      var randSelector = getRandom(arrRandom)
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
-          ArrofGenPass.push(getRandom(specialCharacters));
-          arrRandom.pop(1);
+            ArrofGenPass.push(getRandom(specialCharacters));
+            arrRandom.pop(1);
         } else if ((randSelector == 2 && i === 1 || i === 2 || i === 3)) {
-          ArrofGenPass.push(getRandom(numericCharacters));
-          arrRandom.pop(2);
+            ArrofGenPass.push(getRandom(numericCharacters));
+            arrRandom.pop(2);
         } else if ((randSelector == 3 && i === 1 || i === 2 || i === 3)) {
-          ArrofGenPass.push(getRandom(lowerCasedCharacters));
-          arrRandom.pop(3);
+            ArrofGenPass.push(getRandom(lowerCasedCharacters));
+            arrRandom.pop(3);
         } else {
-          ArrofGenPass.push(getRandom(spNumAndLowerXter));
+            ArrofGenPass.push(getRandom(spNumAndLowerXter));
         }
-    }
+      }
     console.log(ArrofGenPass.join(''))
     return ArrofGenPass.join('')
     // if TFTT - Use special, lowercase, upprcase
   } else if ((optOfchar[0] == true && optOfchar[1] == false && optOfchar[2] == true && optOfchar[3] == true)) {
-    for (var i = 1; i <= passwordL; i++) {
+      var arrRandom = [1,2,3]   
+      for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
-      var arrRandom = [1,2,3]  
-      var randSelector = getRandom(arrRandom)
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom.pop(1);
@@ -288,10 +260,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if FTTT - Use number, lowercase, uppercase
   } else if ((optOfchar[0] == false && optOfchar[1] == true && optOfchar[2] == true && optOfchar[3] == true)) {
-    for (var i = 1; i <= passwordL; i++) {
-      // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
       var arrRandom = [1,2,3]  
-      var randSelector = getRandom(arrRandom)
+      for (var i = 1; i <= passwordL; i++) {
+      // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom.pop(1);
@@ -309,10 +281,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if TTFT - Use special, number, uppercase
   } else if ((optOfchar[0] == true && optOfchar[1] == true && optOfchar[2] == false && optOfchar[3] == true)) {
-    for (var i = 1; i <= passwordL; i++) {
+      var arrRandom = [1,2,3] 
+      for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 3 characters in the randomly generated character
-      var arrRandom = [1,2,3]  
-      var randSelector = getRandom(arrRandom)
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2 || i === 3)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom.pop(1);
@@ -330,10 +302,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if TTFF - Use special, number 
   } else if ((optOfchar[0] == true && optOfchar[1] == true && optOfchar[2] == false && optOfchar[3] == false)) {
-    for (var i = 1; i <= passwordL; i++) {
-      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
       var arrRandom = [1,2]  
-      var randSelector = getRandom(arrRandom)
+      for (var i = 1; i <= passwordL; i++) {
+      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom.pop(1);
@@ -348,10 +320,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if TFTF - Use special, lowercase
   } else if ((optOfchar[0] == true && optOfchar[1] == false && optOfchar[2] == true && optOfchar[3] == false)) {
-    for (var i = 1; i <= passwordL; i++) {
-      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
       var arrRandom = [1,2]  
-      var randSelector = getRandom(arrRandom)
+      for (var i = 1; i <= passwordL; i++) {
+      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
           arrRandom.pop(1);
@@ -366,9 +338,9 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if TFFT - Use special, uppercase
   } else if ((optOfchar[0] == true && optOfchar[1] == false && optOfchar[2] == false && optOfchar[3] == true)) {
+    var arrRandom = [1,2]  
     for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
-      var arrRandom = [1,2]  
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(specialCharacters));
@@ -384,10 +356,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if FTTF - Use number, lowercase 
   } else if ((optOfchar[0] == false && optOfchar[1] == true && optOfchar[2] == true && optOfchar[3] == false)) {
-    for (var i = 1; i <= passwordL; i++) {
+      var arrRandom = [1,2]
+      for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
-      var arrRandom = [1,2]  
-      var randSelector = getRandom(arrRandom)
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
           arrRandom.pop(1);
@@ -402,9 +374,9 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if FTFT - Use number, uppercase 
   } else if ((optOfchar[0] == false && optOfchar[1] == true && optOfchar[2] == false && optOfchar[3] == true)) {
-    for (var i = 1; i <= passwordL; i++) {
+      var arrRandom = [1,2]
+      for (var i = 1; i <= passwordL; i++) {
       // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
-      var arrRandom = [1,2]  
       var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(numericCharacters));
@@ -420,10 +392,10 @@ function generatePassword() {
     return ArrofGenPass.join('')
     // if FFTT - Use lowercase, uppercase 
   } else if ((optOfchar[0] == false && optOfchar[1] == false && optOfchar[2] == true && optOfchar[3] == true)) {
-    for (var i = 1; i <= passwordL; i++) {
-      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
       var arrRandom = [1,2]  
-      var randSelector = getRandom(arrRandom)
+      for (var i = 1; i <= passwordL; i++) {
+      // This block of code ensures there is at least one of each of the 2 characters in the randomly generated character
+        var randSelector = getRandom(arrRandom)
         if ((randSelector == 1 && i === 1 || i === 2)) {
           ArrofGenPass.push(getRandom(lowerCasedCharacters));
           arrRandom.pop(1);
