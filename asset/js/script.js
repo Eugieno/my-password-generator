@@ -453,3 +453,25 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+// Add Event listener to copy button 
+document.getElementById("copy").addEventListener('click',function(){
+  // grab input 
+  var copyText = document.getElementById("password");
+  // select text in input field
+  copyText.focus();
+  copyText.setSelectionRange(0, this.value.length);
+  // copy to clipboard
+  navigator.clipboard.writeText(copyText.value);
+  // alert
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+
+
+})
+
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
